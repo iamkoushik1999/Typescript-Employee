@@ -2,9 +2,11 @@
   "name": "typescript-employee",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "",
