@@ -4,6 +4,8 @@ import 'dotenv/config';
 import connectDB from './config/db';
 // ERROR MIDDLEWARE
 import errorHandler from './middlewares/errorMiddleware';
+// ROUTES
+import employeeRoutes from './routes/employeeRoutes';
 // ENV
 const { PORT } = process.env;
 // App Initialize
@@ -13,6 +15,9 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/api/v1', employeeRoutes);
 
 // Error Handler
 app.use(errorHandler);
