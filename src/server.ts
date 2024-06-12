@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+import compression from 'compression';
 // DATABASE
 import connectDB from './config/db';
 // ERROR MIDDLEWARE
@@ -13,6 +14,8 @@ const app = express();
 // Database
 connectDB();
 
+// Middleware
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
